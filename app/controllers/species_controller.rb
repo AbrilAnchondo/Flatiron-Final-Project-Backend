@@ -10,5 +10,14 @@ class SpeciesController < ApplicationController
         end
       end
 
+      # example to create associations, you have to send the token otherwise you cannot make that association
+      # creating a species_user
+      # def species_user
+      #    if authenticated?
+      #       UserSpecies.create(user: user_who_is_logged_in, species_id: params[:id])
+      #       #user_who_is_logged_in.user_species.create(species_id: 2)
+      #    end
+      # end
+
     
 end
