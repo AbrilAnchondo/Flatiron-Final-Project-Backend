@@ -10,6 +10,7 @@ class UsersController < ApplicationController
         if authorized?(user_id) # see application_controller.rb
           user = User.find(user_id)
           render json: user, include: :species
+
         else
           tell_user_to_go_away! # see application_controller.rb
         end
