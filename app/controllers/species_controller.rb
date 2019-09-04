@@ -10,6 +10,13 @@ class SpeciesController < ApplicationController
         end
       end
 
+      def show
+         if authenticated?
+            species Species.find(params[:id])
+            render json: @species
+         end
+      end
+
       # example to create associations, you have to send the token otherwise you cannot make that association
       # creating a species_user
       # def species_user
