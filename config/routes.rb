@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
 
   get '/persist', to: 'tokens#persist'
- 
+  post '/tokens', to: 'tokens#create'
+  
+  resources :comments
   resources :organizations
   resources :messages
   resources :followings
@@ -10,7 +12,6 @@ Rails.application.routes.draw do
 
  
 
-  post '/tokens', to: 'tokens#create'
  
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

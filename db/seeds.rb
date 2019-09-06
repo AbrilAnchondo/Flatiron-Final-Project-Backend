@@ -6,10 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.destroy_all
+Comment.destroy_all
 Message.destroy_all
 Following.destroy_all
 Species.destroy_all
+User.destroy_all
 
 u1=User.create(username:"abril", password:"abc123")
 u2=User.create(username:"gia", password:"abc123")
@@ -34,3 +35,6 @@ f3=Following.create(user:u2, species:s2)
 m1=Message.create(following:f1, maker:u1, receiver:u2, content:"Hello! I love the polar bear too")
 m2=Message.create(following:f2, maker:u1, receiver:u3, content:"Cute")
 m3=Message.create(following:f3, maker:u1, receiver:u2, content:"Hello! Whales are the best!!")
+
+c1=Comment.create(user:u1, species:s2, content:"I want to travel the world and go to the best whale watching tours, any suggestions?")
+c2=Comment.create(user:u2, species:s3, content:"Awww")
