@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.destroy_all
-Comment.destroy_all
+Message.destroy_all
 Following.destroy_all
 Species.destroy_all
 
@@ -29,6 +29,8 @@ s4=Species.create(common_name:"Tiger", scientific_name:"panthera tigris", habita
 
 f1=Following.create(user:u2, species:s1)
 f2=Following.create(user:u3, species:s1)
+f3=Following.create(user:u2, species:s2)
 
-c1=Comment.create(following:f1, maker:u1, receiver:u2, content:"Hello! I love the polar bear too")
-c2=Comment.create(following:f2, maker:u1, receiver:u3, content:"Cute")
+m1=Message.create(following:f1, maker:u1, receiver:u2, content:"Hello! I love the polar bear too")
+m2=Message.create(following:f2, maker:u1, receiver:u3, content:"Cute")
+m3=Message.create(following:f3, maker:u1, receiver:u2, content:"Hello! Whales are the best!!")

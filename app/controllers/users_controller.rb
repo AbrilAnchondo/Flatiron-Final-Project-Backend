@@ -1,16 +1,19 @@
 class UsersController < ApplicationController
 
     def index 
+     
         @users = User.all 
         render json: @users
+   
     end
 
     def show
         user_id = params[:id]
+      
+       
         if authorized?(user_id) # see application_controller.rb
           user = User.find(user_id)
-          render json: user, include: :species
-
+          render json: user, include: [:species, :m, :makers]
         else
           tell_user_to_go_away! # see application_controller.rb
         end

@@ -6,8 +6,11 @@ class FollowingsController < ApplicationController
     end
 
     def show
-        @following = Following.find(params[:id])
-        render json: @following
+        user_id = params[:id]
+        if authorized?(user_id)
+            @following = Following.find(params[:id])
+            render json: @following, include: :comments
+        end
     end
 
     def create

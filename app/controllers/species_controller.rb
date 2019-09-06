@@ -11,9 +11,10 @@ class SpeciesController < ApplicationController
       end
 
       def show
+         
          if authenticated?
-            species Species.find(params[:id])
-            render json: @species
+            species = Species.find(params[:id])
+            render json: species, include: :followings
          end
       end
 

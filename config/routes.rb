@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get '/persist', to: 'tokens#persist'
  
   resources :organizations
-  resources :comments
+  resources :messages
   resources :followings
   resources :species
   resources :users
