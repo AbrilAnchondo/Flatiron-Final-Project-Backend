@@ -9,11 +9,10 @@ class UsersController < ApplicationController
 
     def show
         user_id = params[:id]
-      
-       
         if authorized?(user_id) # see application_controller.rb
           user = User.find(user_id)
-          render json: user, include: [:species, :m, :makers]
+         # render json: user, include: [:species, :m, :makers]
+           render json: user, :include =>  [:m, :makers, :species => {:include => :followings}]
         else
           tell_user_to_go_away! # see application_controller.rb
         end
@@ -38,7 +37,3 @@ class UsersController < ApplicationController
    
 end
 
- #   def edit
-    #     @user = User.find(user_params)
-    #     render json: @user
-    #   end

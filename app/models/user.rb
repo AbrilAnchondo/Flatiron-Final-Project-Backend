@@ -11,7 +11,7 @@ class User < ApplicationRecord
     has_many :species, through: :followings
 
     has_many :comments, dependent: :destroy
-    has_many :species, through: :comments
+    #has_many :species, through: :comments
 
     validates_presence_of :username
     validates_uniqueness_of :username, :case_sensitive => false

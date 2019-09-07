@@ -38,3 +38,4 @@ m3=Message.create(following:f3, maker:u1, receiver:u2, content:"Hello! Whales ar
 
 c1=Comment.create(user:u1, species:s2, content:"I want to travel the world and go to the best whale watching tours, any suggestions?")
 c2=Comment.create(user:u2, species:s3, content:"Awww")
+
