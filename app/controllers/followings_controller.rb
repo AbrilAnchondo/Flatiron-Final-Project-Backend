@@ -24,6 +24,18 @@ class FollowingsController < ApplicationController
         end   
     end
 
+    def destroy
+        user = user_who_is_logged_in
+        if user.valid?
+            @following = Following.find(params[:id])
+            @following.destroy
+            render json: @following
+        else
+            tell_user_to_go_away!
+        end
+
+    end
+
    
     private
 
