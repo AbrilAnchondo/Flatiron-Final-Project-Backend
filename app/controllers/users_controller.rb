@@ -9,7 +9,6 @@ class UsersController < ApplicationController
 
     def show
         user_id = params[:id]
-        username = params[:username]
         if authorized?(user_id) # see application_controller.rb
           user = User.find(user_id)
          # render json: user, include: [:species, :m, :makers]

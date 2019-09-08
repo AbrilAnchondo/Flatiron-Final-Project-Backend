@@ -13,7 +13,7 @@ class SpeciesController < ApplicationController
       def show
         if authenticated?
             species = Species.find(params[:id])
-            render json: species, include: [:followings, :comments, :users]
+            render json: species, :include => [:followings, :users, :comments => {:include => :user}]
          end
       end
 
