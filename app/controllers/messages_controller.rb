@@ -8,20 +8,31 @@ class MessagesController < ApplicationController
 
     def show
         @message = Message.find(params[:id])
-        render json: @message
+        render json: @message, include: :maker
     end
 
     def create
         user = user_who_is_logged_in
         if user.valid?
             @message = Message.create(message_params)
-            render json: @message
+            render json: @message, include: :maker
         end
     end
 
     def edit
         @message = Message.find(message_params)
         render json: @message
+    end
+
+    def destroy
+        user = user_who_is_logged_in
+        if user.valid?
+            @message = Message.find(params[:id])
+            @message.destroy
+            render json: @message
+        else
+            tell_user_to_go_away!
+        end
     end
 
     private

@@ -147,6 +147,6 @@ o16=Organization.create(name:"World Wide Fund for Nature", url:"https://www.worl
 
 
 
-# m1=Message.create(following:f1, maker:u1, receiver:u2, content:"Hello! I love the polar bear too")
-# m2=Message.create(following:f2, maker:u1, receiver:u3, content:"Cute")
-# m3=Message.create(following:f3, maker:u1, receiver:u2, content:"Hello! Whales are the best!!")
+m1=Message.create(maker:u1, receiver:u2, content:"Hello! I love the polar bear too")
+m2=Message.create(maker:u1, receiver:u3, content:"Cute")
+m3=Message.create(maker:u1, receiver:u2, content:"Hello! Whales are the best!!")
